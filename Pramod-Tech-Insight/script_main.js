@@ -1,16 +1,6 @@
-const apiKey1 = "API_KEY_1";
-const apiKey2 = "API_KEY_2";
-let currentApiKey = apiKey1; // Start with apiKey1
+const apiKey = "YOUR_API_KEY";
 let page = 1;
 let totalResults = 0;
-let apiKeySwitchInterval = 360 * 60 * 1000; // 6 hour in milliseconds
-
-function toggleApiKey() {
-  // Toggle between apiKey1 and apiKey2 on each request
-  currentApiKey = currentApiKey === apiKey1 ? apiKey2 : apiKey1;
-  // Call the function to fetch news with the new API key
-  getFullStackNews();
-}
 
 function updateDateTime() {
   const dateElement = document.getElementById("date-time");
@@ -27,17 +17,9 @@ function updateDateTime() {
   dateElement.textContent = new Date().toLocaleDateString("en-US", options);
 }
 
-async function getFullStackNews(query) {
-  // Get the date three days behind the current date and format it as YYYY-MM-DD
-  const currentDate = new Date();
-  currentDate.setDate(currentDate.getDate() - 15); // Subtract 15 days
-  const currentDateFormat = `${currentDate.getFullYear()}-${
-    currentDate.getMonth() + 1
-  }-${currentDate.getDate()}`;
+async function getFullStackNews() {
+  const fullStackApiUrl = `https://api.currentsapi.services/v1/search?&apiKey=${apiKey}&category=technology&language=en&page=${page}`;
 
-  // Update the API URL with the calculated date and query
-  // const fullStackApiUrl = `https://newsapi.org/v2/everything?q=${query}&from=${currentDateFormat}&language=en&sortBy=publishedAt&apiKey=${apiKey}&pageSize=100`;
-  const fullStackApiUrl = `https://newsapi.org/v2/top-headlines?country=in&category=technology&from=${currentDateFormat}&language=en&sortBy=publishedAt&apiKey=${currentApiKey}&pageSize=100`;
   try {
     const response = await fetch(fullStackApiUrl);
 
@@ -47,17 +29,17 @@ async function getFullStackNews(query) {
 
     const data = await response.json();
 
-    totalResults = data.totalResults;
+    totalResults = data.news.length;
 
     const newsContainer = document.getElementById("news-container");
 
-    data.articles.forEach((article) => {
+    data.news.forEach((article) => {
       const newsCard = document.createElement("div");
       newsCard.classList.add("news-card");
 
       const image = document.createElement("img");
       image.classList.add("news-image");
-      image.src = article.urlToImage || "placeholder-image.jpg";
+      image.src = article.image || "placeholder-image.jpg";
       image.alt = article.title;
 
       const content = document.createElement("div");
@@ -73,11 +55,11 @@ async function getFullStackNews(query) {
 
       const source = document.createElement("p");
       source.classList.add("news-source");
-      source.textContent = `Source: ${article.source.name}`;
+      source.textContent = `Source: ${article.author}`;
 
       const publishedAt = document.createElement("p");
       publishedAt.classList.add("news-published-at");
-      publishedAt.textContent = `Published: ${article.publishedAt}`;
+      publishedAt.textContent = `Published: ${article.published}`;
 
       const readMore = document.createElement("a");
       readMore.classList.add("news-read-more");
@@ -95,19 +77,15 @@ async function getFullStackNews(query) {
 
       newsContainer.appendChild(newsCard);
     });
+
+    page++; // Increment the page number for the next request
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
-// Initial call to load the first set of news articles for "tech"
+// Initial call to load the first set of news articles
 getFullStackNews();
-
-// Schedule checking for new news every hour (3600000 milliseconds)
-setInterval(getFullStackNews, 3600000);
-
-// Toggle API key every 6 Hours
-setInterval(toggleApiKey, apiKeySwitchInterval);
 
 // Update the time every second
 setInterval(updateDateTime, 1000);

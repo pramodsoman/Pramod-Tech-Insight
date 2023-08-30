@@ -18,7 +18,7 @@ function updateDateTime() {
 }
 
 async function getFullStackNews() {
-  const fullStackApiUrl = `https://api.currentsapi.services/v1/search?&apiKey=${apiKey}&category=business&language=en&page=${page}`;
+  const fullStackApiUrl = `https://api.currentsapi.services/v1/search?apiKey=${apiKey}&category=technology&language=en&page=${page}`;
 
   try {
     const response = await fetch(fullStackApiUrl);

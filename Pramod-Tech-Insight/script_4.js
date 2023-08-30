@@ -1,4 +1,4 @@
-const apiKey = "API_KEY";
+const apiKey = "YOUR_API_KEY";
 let page = 1;
 let totalResults = 0;
 
@@ -18,7 +18,7 @@ function updateDateTime() {
 }
 
 async function getFullStackNews() {
-  const fullStackApiUrl = `https://api.currentsapi.services/v1/search?apiKey=${apiKey}&category=technology&language=en&page=${page}`;
+  const fullStackApiUrl = `https://api.currentsapi.services/v1/search?apiKey=${apiKey}&category=game&language=en&page=${page}`;
 
   try {
     const response = await fetch(fullStackApiUrl);
@@ -77,6 +77,8 @@ async function getFullStackNews() {
 
       newsContainer.appendChild(newsCard);
     });
+
+    page++; // Increment the page number for the next request
   } catch (error) {
     console.error("Error:", error);
   }
