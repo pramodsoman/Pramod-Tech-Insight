@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY";
+const apiKey = "yTTA_0zNsID9FBzRmWfkcuSTLA2Flj51O1MAlie_Yde3j6-A";
 let page = 1;
 let totalResults = 0;
 
@@ -53,6 +53,10 @@ async function getFullStackNews() {
       description.classList.add("news-description");
       description.textContent = article.description;
 
+      // Create a container for source, publishedAt, and readMore
+      const detailsContainer = document.createElement("div");
+      detailsContainer.classList.add("news-details");
+
       const source = document.createElement("p");
       source.classList.add("news-source");
       source.textContent = `Source: ${article.author}`;
@@ -66,11 +70,17 @@ async function getFullStackNews() {
       readMore.href = article.url;
       readMore.textContent = "Read More";
 
+      // Append source, publishedAt, and readMore to the details container
+      detailsContainer.appendChild(source);
+      detailsContainer.appendChild(publishedAt);
+      detailsContainer.appendChild(readMore);
+
+      // Append detailsContainer to the content
       content.appendChild(title);
       content.appendChild(description);
-      content.appendChild(source);
-      content.appendChild(publishedAt);
-      content.appendChild(readMore);
+
+      // Append detailsContainer at the bottom
+      content.appendChild(detailsContainer);
 
       newsCard.appendChild(image);
       newsCard.appendChild(content);

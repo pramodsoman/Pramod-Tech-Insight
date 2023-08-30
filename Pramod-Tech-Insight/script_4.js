@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY";
+const apiKey = "yTTA_0zNsID9FBzRmWfkcuSTLA2Flj51O1MAlie_Yde3j6-A";
 let page = 1;
 let totalResults = 0;
 

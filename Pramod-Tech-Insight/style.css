@@ -1,3 +1,28 @@
+/** Font-family **/
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("fonts/amazon-ember-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("fonts/amazon-ember-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("fonts/amazon-ember-italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/** Root **/
+* {
+  font-family: "Amazon Ember";
+}
+
 body,
 h1,
 h2,
@@ -7,7 +32,6 @@ p {
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: #f5f5f5;
 }
 
@@ -31,7 +55,7 @@ body {
 }
 
 .nav-links li {
-  margin-right: 10px; 
+  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -39,19 +63,19 @@ body {
   text-decoration: none;
   color: #777777;
   padding: 2px 2px;
-  font-weight: bold; 
+  font-weight: bold;
   transition: color 0.2s ease-in-out;
 }
 
 /*  Hover effect */
 .nav-links a:hover {
-  color: #efb70f; 
+  color: #efb70f;
 }
 
 header {
   background-color: white;
   color: #404040;
-  padding: 20px;
+  padding: 14px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -62,19 +86,23 @@ header {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
-  background-image: linear-gradient(to right, #ff5733, #ffbd33, #33ff57, #3391ff); /* Gradient with multiple colors */
+  background-image: linear-gradient(
+    to right,
+    #ff5733,
+    #ffbd33,
+    #33ff57,
+    #3391ff
+  ); /* Gradient with multiple colors */
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
-  animation: gradientChange 5s linear infinite; 
-
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: gradientChange 5s linear infinite;
 }
-
 
 @keyframes gradientChange {
   0% {
@@ -85,7 +113,6 @@ h1 {
   }
 }
 
-
 #date-time {
   font-size: 1rem;
   color: #c2bdbd;
@@ -95,7 +122,7 @@ h1 {
 }
 
 main {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -105,8 +132,8 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   max-width: 1200px;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 10px;
+  margin-top: 2px;
 }
 
 .news-card {
@@ -141,10 +168,13 @@ main {
 .news-content {
   padding: 20px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .news-title {
-  font-size: 1.25rem;
+  font-size: 1.33rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -154,6 +184,11 @@ main {
   line-height: 1.4;
   color: #333;
   margin-bottom: 1rem;
+}
+/* Aligned source,published & Readmore to bottom of the newscard */
+.news-details {
+  display: flex;
+  flex-direction: column;
 }
 
 .news-source {
@@ -178,6 +213,14 @@ main {
 .news-read-more:hover {
   color: #005c99;
 }
+
+/* .news-source,
+.news-published-at,
+.news-read-more {
+  
+  margin: 0; 
+} */
+
 /* Footer styling */
 footer {
   background-color: #333;
@@ -205,38 +248,21 @@ footer {
 
   h1 {
     font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
   }
 
-  @keyframes gradientChange {
-    0% {
-      background-position: 0%; 
-    }
-    100% {
-      background-position: 100%; 
-    }
-  }
-  
   .navbar {
-    font-size: 0.70rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 0.7rem;
     height: 20px;
   }
 
   #date-time {
     font-size: 0.585rem;
-    text-align: end;
-    margin-top: 1px;
+    margin-top: 2px;
     padding-right: 2px;
   }
 
   .nav-links a {
-    font-size: 0.85rem;
+    font-size: 0.91rem;
   }
 
   .container {
@@ -247,26 +273,23 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  
 
   .news-card {
     max-width: 95%;
   }
 
   .news-title {
-    font-size: 1.20rem;
-    
+    font-size: 1.2rem;
   }
 
   .news-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     /* margin-bottom: 0.5rem; */
   }
 
   .news-source,
   .news-published-at {
     font-size: 0.875rem;
-    
   }
 
   .news-content {
@@ -274,48 +297,46 @@ footer {
   }
 
   footer {
-    padding: 3px 0; 
+    padding: 3px 0;
     font-size: small;
   }
 
   .footer-content {
-    max-width: 100%; 
-    padding: 0 5px; 
+    max-width: 100%;
+    padding: 0 5px;
   }
 }
 
+/* Responsive Design for Medium Screens (601px to 1000px) */
 @media screen and (min-width: 601px) and (max-width: 1000px) {
   header {
     padding: 0.5rem 0;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 0.85rem;
+    height: 25px;
   }
 
+  .nav-links a {
+    font-size: 0.95rem;
+  }
 
   #date-time {
-    font-size: 0.685rem;
-    text-align: end;
-    margin-top: 1px;
-    padding-right: 2px;
+    font-size: 0.7rem;
+    margin-top: 4px;
+    margin-right: 20px;
   }
 
-
-
   .container {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    padding: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 5px;
+    max-width: 100%;
   }
 
   .news-card {
@@ -323,12 +344,11 @@ footer {
   }
 
   .news-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .news-description {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
   }
 
   .news-source,
@@ -337,15 +357,54 @@ footer {
   }
 
   .news-content {
-    padding: 4px;
+    padding: 10px;
   }
+
   footer {
-    padding: 3px 0; 
     font-size: small;
   }
 
   .footer-content {
-    max-width: 100%;
-    padding: 0 5px; 
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  header {
+    padding: 0.5rem 0;
+  }
+
+  h1 {
+    font-size: 0.79rem;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+  }
+
+  .nav-links a {
+    font-size: 0.66rem;
+  }
+
+  #date-time {
+    font-size: 0.485rem;
+    text-align: end;
+    margin-top: 2px;
+    padding-right: 2px;
+  }
+  .news-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .news-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 1rem;
   }
 }
