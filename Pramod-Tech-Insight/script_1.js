@@ -14,6 +14,7 @@ function updateDateTime() {
     second: "numeric",
     hour12: true,
   };
+  
   dateElement.textContent = new Date().toLocaleDateString("en-US", options);
 }
 
