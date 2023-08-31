@@ -20,7 +20,7 @@ Pramod Tech Insight is your trusted source for staying up-to-date with the lates
 
 ## GitHub Repository
 
-👉 Explore the project on GitHub: [GitHub Repository](https://github.com/pramodsoman/Pramod-Tech-Insight)
+👉 Explore the project on GitHub: [GitHub Repository](https://github.com/pramodsoman/Pramod-Tech-Insight/tree/main/Pramod-Tech-Insight)
 
 ## Get Involved
 
