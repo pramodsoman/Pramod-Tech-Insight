@@ -2,22 +2,6 @@ const apiKey = "YOUR_API_KEY";
 let page = 1;
 let totalResults = 0;
 
-function updateDateTime() {
-  const dateElement = document.getElementById("date-time");
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-    hour12: true,
-  };
-  
-  dateElement.textContent = new Date().toLocaleDateString("en-US", options);
-}
-
 async function getFullStackNews() {
   const fullStackApiUrl = `https://api.currentsapi.services/v1/search?apiKey=${apiKey}&category=technology&language=en&page=${page}`;
 
@@ -79,7 +63,7 @@ async function getFullStackNews() {
       newsContainer.appendChild(newsCard);
     });
 
-    page++; // Increment the page number for the next request
+    page++; 
   } catch (error) {
     console.error("Error:", error);
   }
@@ -88,5 +72,4 @@ async function getFullStackNews() {
 // Initial call to load the first set of news articles
 getFullStackNews();
 
-// Update the time every second
-setInterval(updateDateTime, 1000);
+
