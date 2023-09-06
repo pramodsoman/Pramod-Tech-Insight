@@ -20,14 +20,10 @@ Pramod Tech Insight is your trusted source for staying up-to-date with the lates
 
 ## GitHub Repository
 
-👉 Explore the project on GitHub: [GitHub Repository](https://github.com/pramodsoman/Pramod-Tech-Insight)
+👉 Explore the project on GitHub: [GitHub Repository](https://github.com/pramodsoman/Pramod-Tech-Insight/tree/main/Pramod-Tech-Insight)
 
 ## Get Involved
 
 🙌 Feel free to clone or fork this repository to access the source code of Pramod Tech Insight's website. Customize and explore as needed. Join me on this journey of exploration and innovation. Your ideas and feedback are highly valued.
 
-Whether you're passionate about tech, business, programming, science, or gaming, Pramod Tech Insight has something for you.
 
-Let's stay ahead in these ever-evolving domains, together! 🚀
-
-#TechNews #Business #Programming #Science #Gaming #Innovation
