@@ -15,6 +15,7 @@ Pramod Tech Insight is your trusted source for staying up-to-date with the lates
 - 📰 Daily news updates in tech, business, programming, science, and gaming.
 - 🚀 In-depth articles on tech innovations.
 - 🌟 Stay informed about emerging technologies.
+- 🔍 Search functionality to find news articles easily.
 - 📱 Responsive design for a seamless user experience on all devices.
 - 🌐 Utilizes the Currents API to fetch news from these dynamic domains.
 
