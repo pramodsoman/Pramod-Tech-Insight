@@ -19,12 +19,12 @@ Pramod Tech Insight is your trusted source for staying up-to-date with the lates
 - 📱 Responsive design for a seamless user experience on all devices.
 - 🌐 Utilizes the Currents API to fetch news from these dynamic domains.
 
-## GitHub Repository
 
-👉 Explore the project on GitHub: [GitHub Repository](https://github.com/pramodsoman/Pramod-Tech-Insight/tree/main/Pramod-Tech-Insight)
+## Contributing:
+- If you would like to contribute to the project, please fork the repository and submit a pull request with your changes.
 
-## Get Involved
+## License:
+- This project is licensed under the MIT License.
 
-🙌 Feel free to clone or fork this repository to access the source code of Pramod Tech Insight's website. Customize and explore as needed. Join me on this journey of exploration and innovation. Your ideas and feedback are highly valued.
 
 
