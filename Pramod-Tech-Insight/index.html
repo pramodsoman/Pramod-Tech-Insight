@@ -37,9 +37,13 @@
     </main>
     <footer>
       <div class="footer-content">
-        <p>&copy; 2023 Pramod Tech News</p>
+        <p>&copy; <span id="current-year"></span> Pramod Tech News</p>
       </div>
     </footer>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
     <script src="script_main.js"></script>
   </body>
 </html>
