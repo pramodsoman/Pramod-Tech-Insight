@@ -180,10 +180,50 @@ main {
 .search::placeholder {
   color: #99a1b3;
   font-style: normal;
-  font-size: 15px;
+  font-size: 18px;
   padding: 5px;
   font-family: Arial, sans-serif;
 }
+
+.linkedin-follow {
+  position: fixed;
+  top: 100px;
+  right: 16px;
+  z-index: 1000;
+}
+.linkedin-follow a {
+  background-color: #0077B5 !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+.linkedin-follow a:hover {
+  background-color: #004182 !important;
+}
+@media (max-width: 768px) {
+  .linkedin-follow {
+    top: 125px;
+    right: 16px;
+  }
+  .linkedin-follow a {
+    font-size: 13px !important;
+    padding: 5px 5px;
+    border-radius: 30px;
+    max-width: 90px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+
+
 
 /* News card */
 .news-card {
